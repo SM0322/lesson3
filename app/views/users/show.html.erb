@@ -1,0 +1,14 @@
+<%= render 'user2', user: @user %>
+<%= render 'books/new', book: @book %>
+
+<div>
+  <h3>Books</h3>
+</div>
+
+
+<% @books.each do |book| %>
+<div>
+  <p>Title：<%= link_to book.title, book_path(book.id) %></p>
+  <p>Opinion：<%= book.body %></p>
+</div>
+<% end %>
