@@ -1,0 +1,11 @@
+<h1>Books</h1>
+
+<%= @books.each do |book| %>
+<div>
+  <p><%= image_tag 'sample-author1.jpg' %></p>
+  <span>
+    <p>Title:<%= link_to book.title, book_path(book.id) %></p>
+  </span>
+    <p>Opinion：<%= book.body %></p>
+</div>
+<% end %>
