@@ -1,11 +1,53 @@
+<%= flash[:notice] %>
+<div class="container px-5 px-sm-0">
+
+  <div class="row">
+    <div class="col-md-3">
+
 <%= render 'users/user1', book: @book %>
 <%= render 'new', book: @books %>
+</div>
+
+      <div class="col-md-8 offset-md-1">
 
 <h2>Book detail</h2>
-<p><%= image_tag @book.user.get_profile_image(100,100) %></p>
-<p><%= link_to @book.user.name, user_path(@book.user.id) %></p>
-<p><%= @book.title %></p>
-<p><%= @book.body %></p>
 
-<%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to "Destroy", book_path(@book.id), method: :delete %>
+
+<table class="table">
+
+  <tr>
+   <th>
+     <span>
+      <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
+      <p><%= link_to @book.user.name, user_path(@book.user.id) %></p>
+     </span>
+   </th>
+
+   <th>
+     <span>
+      <p><%= @book.title %></p>
+     </span>
+   </th>
+
+   <th>
+     <span>
+      <p><%= @book.body %></p>
+     </span>
+   </th>
+
+   <th>
+     <span class="btn btn-sm btn-success edit_book_210">
+      <a><%= link_to "Edit", edit_book_path(@book.id) %></a>
+     </span>
+   </th>
+
+   <th>
+     <span class="btn btn-sm btn-danger destroy_book_210">
+      <p><%= link_to "Destroy", book_path(@book.id), method: :delete %></p>
+     </span>
+   </th>
+  </tr>
+</table>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,45 @@
+
+<div class="container px-5 px-sm-0">
+
+  <div class="row">
+    <div class="col-md-3">
+
 <%= render 'user', user: @user %>
 <%= render 'books/new', book: @books %>
+</div>
 
+      <div class="col-md-8 offset-md-1">
 <h1>Users</h1>
 
-<%= @users.each do |user| %>
-<div>
-  <p><%= image_tag 'sample-author1.jpg' %></p>
-  <span>
-    <p>name:<%= user.name %></p>
-  </span>
+<table class="table">
+  <tr>
+   <th>Image</th>
+   <th>Name</th>
+   <th></th>
+  </tr>
 
-  <%= link_to "Show", user_path(user.id) %>
+<%= @users.each do |user| %>
+  <tr>
+   <th>
+     <span>
+      <p><%= image_tag user.get_profile_image(100,100) %></p>
+     </span>
+   </th>
+   <th>
+     <span>
+      <p><%= user.name %></p>
+     </span>
+   </th>
+
+   <th>
+     <span>
+      <p> <%= link_to "Show", user_path(user.id) %></p>
+     </span>
+   </th>
+  </tr>
+  <% end %>
+</table>
+    </div>
+  </div>
 
 </div>
-<% end %>

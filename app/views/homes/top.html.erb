@@ -1,3 +1,4 @@
+<%= flash[:notice] %>
 <div class="container">
   <div class="row">
     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-x1-6">
@@ -20,15 +21,15 @@
 <div class="btn-wrapper col-10 mx-auto">
 
   <div class="row">
-      <a class="btn btn-info btn-sm btn-block mb-3 sign_in">
-        <%= link_to "Log in", new_user_session_path %>
-      </a>
+      <span class="btn btn-info btn-sm btn-block mb-3 sign_in">
+        <a><%= link_to "Log in", new_user_session_path %></a>
+      </span>
   </div>
 
   <div class="row">
-      <a class="btn btn-success btn-sm btn-block sign_up">
-        <%= link_to "Sign up", new_user_registration_path %>
-      </a>
+      <span class="btn btn-success btn-sm btn-block sign_up">
+        <a><%= link_to "Sign up", new_user_registration_path %></a>
+      </span>
   </div>
 
     </div>
