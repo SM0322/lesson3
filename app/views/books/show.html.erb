@@ -17,10 +17,14 @@
   <tr>
    <th>
      <span>
-      <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
-      <p><%= link_to @book.user.name, user_path(@book.user.id) %></p>
+        <%= link_to user_path(@book.user.id),class: 'nav-link text-blue' do %>
+        <%= image_tag @book.user.get_profile_image(100,100) %><br>
+        <%= @book.user.name %>
+        <% end %>
      </span>
    </th>
+
+
 
    <th>
      <span>
@@ -35,15 +39,15 @@
    </th>
 
    <th>
-     <span class="btn btn-sm btn-success edit_book_210">
-      <a><%= link_to "Edit", edit_book_path(@book.id) %></a>
-     </span>
+         <%= link_to edit_book_path(@book.id),class: "btn btn-sm btn-success edit_book_210" do %>
+         Edit
+         <% end %>
    </th>
 
    <th>
-     <span class="btn btn-sm btn-danger destroy_book_210">
-      <p><%= link_to "Destroy", book_path(@book.id), method: :delete %></p>
-     </span>
+         <%= link_to book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger destroy_book_210" do %>
+         Destroy
+         <% end %>
    </th>
   </tr>
 </table>

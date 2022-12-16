@@ -14,6 +14,10 @@
  </tr>
 </table>
 
-<i class="fas fa-user-cog">
-<p><%= link_to "Edit", edit_user_path(current_user.id) %></p>
-</i>
+<div class="row">
+    <a>
+      <%= link_to edit_user_path(current_user.id),class: 'btn btn-outline-secondary btn-block edit_user' do %>
+      <i class="fas fa-user-cog"></i>
+      <% end %>
+    </a>
+</div>

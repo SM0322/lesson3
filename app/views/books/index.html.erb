@@ -1,10 +1,9 @@
 <div class="container px-5 px-sm-0">
-
   <div class="row">
     <div class="col-md-3">
 
 <%= render 'users/user', book: @book %>
-<%= render 'new', book: @book %>
+<%= render 'new', book: @book1 %>
 </div>
 
       <div class="col-md-8 offset-md-1">
@@ -18,7 +17,7 @@
    <th>Opinion</th>
   </tr>
 
-<%= @books.each do |book| %>
+<% @books.each do |book| %>
   <tr>
    <th>
      <span>

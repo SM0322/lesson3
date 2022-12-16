@@ -27,8 +27,13 @@
   <p><%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placeholder:"Introduction" %></p>
   </div>
 
-  <p class="btn btn-secondary"><%= f.submit "Update User" %></p>
+  <div class="form-group">
+      <%= f.submit "Update User",class: 'btn btn-secondary' do%>
+      <% end %>
+  </div>
 <% end %>
+
+
     </div>
   </div>
 </div>
