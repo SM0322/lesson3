@@ -26,6 +26,8 @@ before_action :ensure_current_book, {only: [:edit, :update]}
   def show
     @books = Book.new
     @book = Book.find(params[:id])
+    @book_comment = BookComment.new
+    @book_comments = BookComment.find(params[:id])
   end
 
   def edit
