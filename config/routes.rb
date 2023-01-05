@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get "search" => "searches#search"
   get 'favorit1es/create'
   get 'favorit1es/destroy'
   get 'favorites/create'
