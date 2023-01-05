@@ -27,7 +27,7 @@ before_action :ensure_current_book, {only: [:edit, :update]}
     @books = Book.new
     @book = Book.find(params[:id])
     @book_comment = BookComment.new
-    @book_comments = BookComment.find(params[:id])
+    @book_comments = @book.book_comments
   end
 
   def edit
