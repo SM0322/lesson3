@@ -20,7 +20,7 @@ before_action :ensure_current_book, {only: [:edit, :update]}
   def index
     @book_page = Book.page(params[:page])
     @book = Book.new
-    @books = Book.all
+    @books = Book.includes(:favirit1ed_users).sort {|a,b| b.favirit1ed_users.size <=> a.favirit1ed_users.size}
   end
 
   def show

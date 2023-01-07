@@ -7,6 +7,7 @@ class Book < ApplicationRecord
   belongs_to :user
   has_many :book_comments, dependent: :destroy
   has_many :favorit1es, dependent: :destroy
+  has_many :favirit1ed_users, through: :favorit1es, source: :user
 
   def get_image
     unless image.attached?

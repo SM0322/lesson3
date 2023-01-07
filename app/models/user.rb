@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :book_comments, dependent: :destroy
   has_many :favorit1es, dependent: :destroy
+  has_many :favirit1ed_users, through: :favorit1es, source: :book
 
   has_one_attached :profile_image
   
