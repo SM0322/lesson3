@@ -7,6 +7,14 @@ class User < ApplicationRecord
   validates :name, length: { in: 2..20 },
                    uniqueness: true 
   validates :introduction, length: {maximum: 50 }
+  
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
+  
+  has_many :view_counts, dependent: :destroy
 
   has_many :books, dependent: :destroy
   has_many :book_comments, dependent: :destroy

@@ -8,7 +8,9 @@ class Book < ApplicationRecord
   has_many :book_comments, dependent: :destroy
   has_many :favorit1es, dependent: :destroy
   has_many :favirit1ed_users, through: :favorit1es, source: :user
-
+  
+  has_many :view_counts, dependent: :destroy
+  
   def get_image
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
